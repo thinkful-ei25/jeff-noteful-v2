@@ -10,6 +10,9 @@ const notesRouter = require('./routes/notes');
 // requiring folders router now
 const foldersRouter = require('./routes/folders');
 
+// requiring tag router now
+const tagsRouter = require('./routes/tags');
+
 // Create an Express application
 const app = express();
 
@@ -30,6 +33,9 @@ app.use('/api/notes', notesRouter);
 
 //Mounting folders router on "/api"
 app.use('/api/folders', foldersRouter);
+
+//Mounting tag router on "/api"
+app.use('/api/tags', tagsRouter);
 
 // Custom 404 Not Found route handler
 app.use((req, res, next) => {

@@ -123,7 +123,10 @@ INSERT INTO tags (name) VALUES
   (1009, 503);
 
 
-
+SELECT title, tags.name, folders.name FROM notes
+LEFT JOIN folders ON notes.folder_id = folders.id
+LEFT JOIN notes_tags ON notes.id = notes_tags.note_id
+LEFT JOIN tags ON notes_tags.tag_id = tags.id;
 
 
 
